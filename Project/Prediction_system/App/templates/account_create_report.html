@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content%}
+<div style="background-color: DodgerBlue; border-right: 5px solid SteelBlue; width: fit-content;" class="offcanvas offcanvas-start" tabindex="-1" id="leftsidebar" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 style="color: white;" class="offcanvas-title" id="offcanvasExampleLabel">ИНСТРУМЕНТАРИЙ</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      {% include "left_sidebar.html" %}
+    </div>
+  </div>
+</div>
+<div class="report-section">
+  {% include "panel.html" %}
+  {% if data_is_not_empty %}
+  <div class="report-iframe">
+    <iframe src="/account/create-report/pdf-report/" width=100% height=100%></iframe>
+  </div>
+  {% else %}
+    <div style="margin: 0;" class="alert alert-info" role="alert">
+      <p style="margin: 0;">{{ notification }}</p>
+    </div>
+  {% endif %}
+</div>
+{% endblock content %}

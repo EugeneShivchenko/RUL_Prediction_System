@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ report_number }}</title>
+        <style type="text/css">
+            body {
+                font-weight: 200;
+                font-size: 19px;
+            }
+
+            .header {
+                text-align: center;
+                color: black;
+            }
+
+            .title {
+                font-size: 26px;
+                font-weight: 100;
+            }
+
+            .details {
+                padding: 0 20px 0 20px;
+                text-align: left;
+            }
+            
+            .line {
+                margin: 20px 0 20px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div class="header">
+                <p class="title">Report No. {{ report_number }}</p>
+            </div>
+        <div>
+            <div class="details">
+                <b>Executor:</b> {{ executor }}<br/>
+                <b>Aircraft tail number:</b> {{ tail_number }}<br/>
+                <b>Engine name:</b> {{ engine_name }}<br/>
+                <b>Engine serial number:</b> {{ serial_number }}<br/>
+                <b>Remaining useful life value:</b> {{ rul }} flight cycle(s)<br/>
+                <b>Date and time of report creation:</b> {{ date_and_time }}
+                <hr class="line">
+            </div>
+        </div>
+    </body>
+</html>
